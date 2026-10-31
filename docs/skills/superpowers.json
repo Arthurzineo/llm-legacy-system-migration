@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "description": "Four user-facing superpowers. These are declarative routes, not automatic agent dispatch.",
+  "entrypoints": [
+    {
+      "id": "orca",
+      "name": "ORCA Project Bootstrap",
+      "skill": "superpower-orca",
+      "aliases": [
+        "start-orca",
+        "init-orca",
+        "resume-orca"
+      ],
+      "required": [
+        "orca-project-entry",
+        "orca-coordination"
+      ],
+      "conditional": {
+        "bootstrap": [
+          "orca-project-structure"
+        ],
+        "assignment": [
+          "orca-work-contract"
+        ],
+        "memory-opt-in": [
+          "ai-memory-v2"
+        ],
+        "architecture": [
+          "codebase-architecture",
+          "architecture-audit",
+          "c4-architecture"
+        ]
+      },
+      "next": [
+        "part1"
+      ]
+    },
+    {
+      "id": "part1",
+      "name": "Part 1 - Static Legacy Discovery",
+      "skill": "superpower-legacy-discovery",
+      "aliases": [
+        "start-part-1",
+        "legacy-discovery"
+      ],
+      "required": [
+        "orca-project-entry",
+        "orca-coordination",
+        "legacy-static-inventory",
+        "legacy-static-decomposition",
+        "legacy-evidence-and-diagrams"
+      ],
+      "conditional": {
+        "delegated": [
+          "orca-work-contract"
+        ],
+        "language-go": [
+          "golang"
+        ],
+        "language-python": [
+          "python"
+        ],
+        "architecture": [
+          "codebase-architecture",
+          "architecture-audit",
+          "c4-architecture"
+        ],
+        "quality": [
+          "qa-methodology",
+          "clean-code-quality-gates"
+        ],
+        "memory-opt-in": [
+          "ai-memory-v2"
+        ],
+        "requirements": [
+          "requirements"
+        ]
+      },
+      "next": [
+        "part1.1",
+        "part2"
+      ]
+    },
+    {
+      "id": "part1.1",
+      "name": "Part 1.1 - Optional Dynamic Characterization",
+      "skill": "superpower-legacy-characterization",
+      "aliases": [
+        "start-part-1.1",
+        "dynamic-characterization"
+      ],
+      "required": [
+        "orca-project-entry",
+        "orca-coordination"
+      ],
+      "conditional": {
+        "decision-yes": [
+          "legacy-dynamic-characterization",
+          "isolated-legacy-runtime",
+          "docker",
+          "qa-methodology",
+          "bdd",
+          "differential-testing"
+        ],
+        "environment-linux": [
+          "linux"
+        ],
+        "delegated": [
+          "orca-work-contract"
+        ],
+        "memory-opt-in": [
+          "ai-memory-v2"
+        ]
+      },
+      "explicit_user_choice": [
+        "YES",
+        "NO",
+        "DEFER"
+      ],
+      "next": [
+        "part2"
+      ]
+    },
+    {
+      "id": "part2",
+      "name": "Part 2 - Migration, Verification and Cutover",
+      "skill": "superpower-legacy-migration",
+      "aliases": [
+        "start-part-2",
+        "legacy-migration"
+      ],
+      "required": [
+        "orca-project-entry",
+        "orca-coordination",
+        "legacy-migration-intake",
+        "requirements",
+        "legacy-target-design"
+      ],
+      "conditional": {
+        "implementation": [
+          "legacy-incremental-implementation",
+          "tdd",
+          "bdd",
+          "refactoring",
+          "design-patterns",
+          "clean-code-quality-gates"
+        ],
+        "verification": [
+          "legacy-equivalence-validation",
+          "differential-testing",
+          "qa-methodology",
+          "mutation-testing"
+        ],
+        "cutover": [
+          "legacy-cutover",
+          "system-design",
+          "docker",
+          "linux"
+        ],
+        "ui": [
+          "design-system"
+        ],
+        "language-go": [
+          "golang"
+        ],
+        "language-python": [
+          "python"
+        ],
+        "delegated": [
+          "orca-work-contract"
+        ],
+        "memory-opt-in": [
+          "ai-memory-v2"
+        ]
+      },
+      "next": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "EV-EXAMPLE-001",
+  "kind": "business-rule",
+  "statement": "SYNTHETIC EXAMPLE: orders above an approved credit limit require review; not recovered from real source code.",
+  "status": "unverified",
+  "confidence": "low",
+  "source": {
+    "repository": "synthetic-example-only",
+    "commit_sha": "NOT_A_REAL_SHA",
+    "path": "examples/OrderService.java",
+    "line_start": 1,
+    "line_end": 2
+  },
+  "verification": "Pending: synthetic demonstration, no real test executed.",
+  "linked_tests": [
+    "TC-EXAMPLE-001"
+  ],
+  "linked_diagrams": []
+}

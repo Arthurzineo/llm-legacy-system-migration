@@ -1,0 +1,19 @@
+{
+  "id": "TC-EXAMPLE-001",
+  "scenario": "SYNTHETIC example of an order approval attempt without remaining credit",
+  "source_revision": "NOT_A_REAL_SHA",
+  "environment": "Not executed; documentation-only example",
+  "input": {
+    "order_id": "EXAMPLE-001",
+    "credit": 0
+  },
+  "observed_output": {
+    "status": "NOT_VERIFIED"
+  },
+  "side_effects": [],
+  "evidence_ids": [
+    "EV-EXAMPLE-001"
+  ],
+  "status": "draft",
+  "reproduce": "Not reproducible: synthetic documentation-only example"
+}

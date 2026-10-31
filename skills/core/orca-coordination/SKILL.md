@@ -1,0 +1,29 @@
+---
+name: orca-coordination
+description: Use for the generic ORCA Chief-worker protocol, conditional delegation, task ownership, contracts, phase gates, diaries and reviews.
+---
+
+# Orca Coordination
+
+
+## Core invariant
+
+Exactly one Chief holds coordination authority for the current project scope. Agent availability varies by project and session. **One Chief is sufficient to execute all workflows**, provided roles and reviews are not falsely represented as independent.
+
+## Decision and assignment
+
+1. List executable tasks and dependencies, then identify real available workers/reviewers from ORCA runtime introspection.
+2. Decide if each task is `solo` or `delegated` after considering communication cost, resource contention, tool access, and risk. Do not create workers merely because a role file exists.
+3. In delegated mode, create one contract per owner: objective, source/target paths, may-modify/may-not-modify, required skills/context, tests, review criteria, delegation rights and reporting target. Use the native runtime's exact supported assignment mechanism. Child contracts cannot grant greater authority than parent contracts.
+4. In solo mode, record a self-owned scoped task (contract-equivalent), run skills serially where roles would otherwise conflict, and label evidence `execution_mode: solo`. Self-review is `independent: false`; request human review on high-impact architecture, security, destructive data or cutover decisions.
+5. Workers create one diary per task and report `ACCEPT`, `STATUS`, `QUESTION`, `BLOCKED`, `ESCALATE`, `REVIEW_REQUEST`, `DONE` as supported. Chief reconciles conflicts before editing a shared area.
+6. Reviewers assess acceptance criteria; they do not silently modify source under review-only contracts.
+7. Chief accepts/reopens tasks only after inspecting actual artifact paths and tool-produced verification results. Summarizer promotes real learnings to `.orca/SUMMARY.md` and `.orca/LESSONS_LEARNED.md`; Chief may perform that role in solo mode with provenance.
+
+## Ownership and memory
+
+Use Git/worktrees for source history. `.orca/` contains authoritative task and decision records. Graphify and AI Memory are retrieval layers and cannot grant permission or overrule committed source/evidence. Refresh derived indexes after authoritative updates when available; never block source inspection simply because they are down.
+
+## Exit criteria
+
+Every completed task has a single owner, actual scope, diary, commands/tests and results, artifacts, a review status with independence declared, and a recorded Chief acceptance or explicit exception.

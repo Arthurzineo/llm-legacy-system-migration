@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/llm-legacy/evidence.schema.json",
+  "title": "Legacy migration evidence record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "status",
+    "statement",
+    "source",
+    "confidence",
+    "kind"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EV-[A-Z0-9-]+$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "structure",
+        "business-rule",
+        "integration",
+        "database",
+        "runtime",
+        "security",
+        "assumption"
+      ]
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 5
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "inferred",
+        "unverified",
+        "rejected"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repository",
+        "commit_sha",
+        "path"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "commit_sha": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "line_start": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "line_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "string"
+    },
+    "linked_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_diagrams": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

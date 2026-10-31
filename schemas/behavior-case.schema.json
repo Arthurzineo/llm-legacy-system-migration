@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/llm-legacy/behavior-case.schema.json",
+  "title": "Legacy characterization case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source_revision",
+    "scenario",
+    "input",
+    "observed_output",
+    "environment",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^TC-[A-Z0-9-]+$"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 5
+    },
+    "source_revision": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "input": {},
+    "observed_output": {},
+    "observed_state": {},
+    "side_effects": {
+      "type": "array",
+      "items": {}
+    },
+    "normalizations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "simulated",
+        "draft"
+      ]
+    },
+    "reproduce": {
+      "type": "string"
+    }
+  }
+}
