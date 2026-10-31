@@ -1,38 +1,47 @@
 #!/usr/bin/env python3
-"""Read-only inventory of optional Uncle Bob quality tools; does not run code analysis."""
+"""Read-only status of optional Uncle Bob tools; never runs quality checks."""
 import argparse
 import json
 import shutil
 from pathlib import Path
 
-TOOLS={
-    'crapper':'https://github.com/unclebob/crapper',
-    'dryer':'https://github.com/unclebob/dryer',
-    'mutator':'https://github.com/unclebob/mutator',
+ROOT = Path(__file__).resolve().parents[1]
+TOOLS = {
+    "crapper": "https://github.com/unclebob/crapper",
+    "dryer": "https://github.com/unclebob/dryer",
+    "mutator": "https://github.com/unclebob/mutator",
 }
 
 def inspect_tools(root=None):
-    base=Path(root).expanduser().resolve() if root else None
-    rows={}
-    for name,url in TOOLS.items():
-        choices=[]
-        in_path=shutil.which(name)
-        if in_path:choices.append(in_path)
-        if base:
-            for p in (base/name/name,base/name):
-                if p.is_file() and p!=base:choices.append(str(p))
-        rows[name]={'installed':bool(choices),'candidates':list(dict.fromkeys(choices)),
-                    'upstream':url,'measured':False}
-    return rows
+    base = Path(root).expanduser().resolve() if root else ROOT / "tools" / "third-party"
+    result = {}
+    for name, url in TOOLS.items():
+        candidates = []
+        executable = shutil.which(name)
+        if executable:
+            candidates.append(executable)
+        for path in (base / name / name, base / name):
+            if path.is_file():
+                candidates.append(str(path))
+        result[name] = {
+            "installed": bool(candidates),
+            "candidates": list(dict.fromkeys(candidates)),
+            "upstream": url,
+            "source_checkout": (base / name / "pyproject.toml").is_file(),
+            "measured": False,
+        }
+    return result
 
-if __name__=='__main__':
-    ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--tools-root',help='Directory with separate crapper/, dryer/, mutator/ checkouts')
-    ap.add_argument('--json',action='store_true')
-    ns=ap.parse_args()
-    data=inspect_tools(ns.tools_root)
-    if ns.json:print(json.dumps(data,indent=2))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--tools-root", help="Parent directory with crapper/, dryer/, mutator/")
+    parser.add_argument("--json", action="store_true")
+    args = parser.parse_args()
+    info = inspect_tools(args.tools_root)
+    if args.json:
+        print(json.dumps(info, indent=2))
     else:
-        for name,info in data.items():
-            print(f'{name}: '+('candidate found' if info['installed'] else 'not found')+'; no metrics measured')
-            for p in info['candidates']:print(f'  {p}')
+        for name, status in info.items():
+            print(f"{name}: {'candidate found' if status['installed'] else 'not found'}; no metrics measured")
+            for path in status["candidates"]:
+                print(f"  {path}")

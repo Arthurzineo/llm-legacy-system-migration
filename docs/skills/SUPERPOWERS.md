@@ -4,7 +4,7 @@ There are **exactly four user-facing superpowers**. They are intentional command
 
 | User request (any language) | Entrypoint skill | Phase | Purpose |
 | --- | --- | --- | --- |
-| Start ORCA | `superpower-orca` | P000 or project resume | Generic Chief, roles, tasks, contracts, diaries, Graphify and optional AI Memory |
+| Start ORCA / Setup ORCA | `superpower-orca` → `orca-setup` | P000 or project resume | Mandatory Chief setup: verified roster, solo/delegated roles, optional contracts, diaries, Graphify and opt-in AI Memory |
 | Start Part 1 | `superpower-legacy-discovery` | P001 | Static inventory, dependency and database analysis, diagrams and evidence |
 | Start Part 1.1 | `superpower-legacy-characterization` | P002, optional | Ask YES / NO / DEFER, plan a safe environment and build characterization tests only if approved |
 | Start Part 2 | `superpower-legacy-migration` | P003–P006 | Questionnaire, architecture decisions, migration slices, equivalence, quality gates and transition |
@@ -44,3 +44,10 @@ Specialists are organized under `skills/{core,migration,programming-languages,ar
 - `superpower-legacy-discovery`: source-backed G1 inventory, diagram traceability and uncertainty review.
 - `superpower-legacy-characterization`: explicit YES/NO/DEFER; if YES, isolated and reproducible behavioral observations; otherwise limitations recorded.
 - `superpower-legacy-migration`: approved G2 target architecture, P004 slice test results, P005 equivalence and security evidence, G3 human cutover approval.
+
+## Mandatory ORCA setup entry (internal skill)
+
+`setup-orca` is an alias for the **existing** `superpower-orca`, which must load `orca-setup` after `orca-project-entry`. There are still only four Superpowers. The Chief inventories currently available agents and their tools, proposes division of responsibilities and optional delegation to the user, assigns one owner per task, and issues bounded contracts to real workers. With no workers (or if the user prefers solo), the Chief performs every role sequentially and marks review non-independent.
+
+Before starting a migration phase, the same setup flow offers project-scoped AI Memory **v2.0.1**: binary version check, server health, per-agent MCP connection, lifecycle hooks, and live `memory_status` verification. Neither memory installation nor automatic prompts capture are implied by simply starting ORCA.
+

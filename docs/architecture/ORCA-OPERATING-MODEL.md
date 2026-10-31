@@ -51,3 +51,10 @@ For the full message envelope, contract lifecycle and diary records, see [ORCA P
 - AI Memory MCP: optional per-project memory and cross-client handoff, not authoritative project state.
 
 Keep state changes in authoritative files before updating Graphify or AI Memory. Never treat retrieval scores as proof. Do not publish repository data to external model providers without authorization.
+
+## Setup-first contract establishment
+
+Starting the existing `superpower-orca` must load `orca-setup` after `orca-project-entry`. The Chief proposes a real staffing/permission matrix before starting implementation: verified agent ID, role, allowed files, task ID, required skills, review independence and contract acceptance state. The user decides whether additional agents are used. There is no fifth Superpower; `setup-orca` is an activation alias.
+
+On user-approved delegation the Chief issues work contracts with the documented ORCA/ASSIGN and requires actual ORCA/ACCEPT. When only a Chief is available, tasks are self-owned and sequential; an external acceptance or independent reviewer must not be invented. Project memory setup is offered during this process but remains opt-in and requires live MCP/hook checks in each runtime client.
+

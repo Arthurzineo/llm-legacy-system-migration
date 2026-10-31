@@ -13,3 +13,10 @@ Inspired by the **public workflow description** of [unclebob/ub-mode](https://gi
 **Practical process:** write behavior test -> implement -> run actual checks -> inspect findings -> refactor smallest risky area -> rerun tests -> record exceptions with reviewer or human approval.
 
 Quality metrics can be manipulated; do not trade correctness or usability for a single numerical target. Only tool-produced results can be labeled as measured.
+
+## Optional pinned source and runtime choice
+
+The three upstream programs are included as **Git submodules** (`tools/third-party/{crapper,dryer,mutator}`) but are never mandatory. Review `docs/integrations/OPTIONAL-UNCLE-BOB-TOOLS.md` and run `python3 scripts/setup_optional_quality_tools.py --target /path/to/source --json` first.
+
+Only select tools for supported source-language scopes (Clojure, Java, Go, TypeScript/JavaScript, Rust or Python) after the Chief verifies parsing/build support and, for coverage or mutation, real runnable tests. A mixed or unsupported-language system must not be described as fully analyzed. Do not treat source checkout or dependency installation as successful quality measurement. The original repositories and 0BSD licenses remain attached through their Git submodules.
+

@@ -19,7 +19,7 @@ Instead of making users remember dozens of skills, the Chief exposes exactly **f
 
 | User command | Superpower | Scope |
 | --- | --- | --- |
-| Start ORCA | `superpower-orca` | Generic project bootstrap, Chief, optional delegation, contracts and memory |
+| Start ORCA / Setup ORCA | `superpower-orca` → `orca-setup` | Discover real agents, agree on role assignments, issue optional worker contracts, establish project state and configure memory only when approved |
 | Start Part 1 | `superpower-legacy-discovery` | Static reverse engineering, source evidence and diagrams |
 | Start Part 1.1 | `superpower-legacy-characterization` | Optional, explicit YES / NO / DEFER, isolated runtime and characterization |
 | Start Part 2 | `superpower-legacy-migration` | Questionnaire, target architecture, incremental implementation, validation and cutover |
@@ -105,3 +105,21 @@ Installation and lifecycle changes are always opt-in; see [AI Memory 2.0.1](docs
 ## Status and non-goals
 
 The published `main` branch establishes **workflow specifications and local validation scripts**, not a finished migration product. Static parsers, automatic diagram accuracy, environment reconstruction, and the AI Memory server have **not** been executed or verified against a legacy codebase. The original methodology drawing is included as reference material.
+
+## Optional external analyzers
+
+[Uncle Bob's Crapper, Dryer and Mutator](docs/integrations/OPTIONAL-UNCLE-BOB-TOOLS.md) are included as **pinned Git submodules** under `tools/third-party/`, preserving original source, commit IDs and 0BSD licenses. These are optional and support Clojure, Java, Go, TypeScript/JavaScript, Rust and Python only. Their presence does **not** automatically run them on a legacy project.
+
+~~~bash
+git submodule update --init tools/third-party/crapper tools/third-party/dryer tools/third-party/mutator
+python3 scripts/setup_optional_quality_tools.py --target /path/to/legacy --json
+# Optional explicit dependency installation after source review:
+python3 scripts/setup_optional_quality_tools.py --prepare
+~~~
+
+The Clean Code skill chooses tools only after source-language discovery, supported-file scoping, baseline test checks and user permission for execution. Unsupported languages are analyzed with other suitable tools or recorded as not measured.
+
+## ORCA setup and AI Memory
+
+`superpower-orca` always loads the **`orca-setup` internal skill** after project entry. The Chief proposes a solo/delegated staffing plan, records who owns each work item, and creates contracts only for verified available agents. Setup also offers **AI Memory v2.0.1** (official pinned version), including separate CLI install, server startup, per-client MCP registration, lifecycle-hook setup and an actual `memory_status` check in each client. See [Project Memory setup](docs/integrations/AI-MEMORY-V2.md) and `scripts/ai_memory_doctor.py`. All modifications to agent configuration remain opt-in.
+

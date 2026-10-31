@@ -5,7 +5,7 @@ The repository uses `skills/<category>/<skill>/SKILL.md` for human organization 
 ## Categories
 
 - `superpowers/`: exactly four user-facing entrypoint skills (generic ORCA, Part 1, optional Part 1.1, Part 2); see [Superpowers](SUPERPOWERS.md).
-- `core/`: ORCA project entry, contracts, role discovery and coordination.
+- `core/`: ORCA project entry, mandatory `orca-setup`, contracts, role discovery and coordination.
 - `migration/`: orchestration, part 1 static analysis, decomposition, evidence, diagrams, optional part 1.1, part 2 questionnaire, implementation and verification.
 - `programming-languages/`: Go and Python; add any language-specific SKILL.md here.
 - `architecture/`: codebase structure, C4, architecture reviews, requirements engineering and design patterns.
@@ -27,3 +27,8 @@ Never use the generic GitHub repo publication script to install skills or change
 ## Entry routing
 
 Do not ask users to invoke the many specialist skills manually. The four `superpower-*` entry skills route to relevant specialists via `superpowers.json` and their own stage instructions. The runtime must read and apply the child skills rather than assume name references execute code. Use `python3 scripts/superpower_plan.py --list` to view entrypoints.
+
+## Third-party tools versus agent skills
+
+The `tools/third-party/` directory contains pinned Git submodules for optional upstream Crapper, Dryer and Mutator. **They are external programs, not Agent Skills and not universal analyzers.** Use `python3 scripts/setup_optional_quality_tools.py --target /path/to/project --json` for a read-only language inventory, then explicitly initialize/install as documented in `docs/integrations/OPTIONAL-UNCLE-BOB-TOOLS.md`. The specialized quality skill decides whether to run them only after verifying supported files and an actual test baseline.
+

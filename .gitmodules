@@ -1,0 +1,9 @@
+[submodule "tools/third-party/crapper"]
+	path = tools/third-party/crapper
+	url = https://github.com/unclebob/crapper.git
+[submodule "tools/third-party/dryer"]
+	path = tools/third-party/dryer
+	url = https://github.com/unclebob/dryer.git
+[submodule "tools/third-party/mutator"]
+	path = tools/third-party/mutator
+	url = https://github.com/unclebob/mutator.git

@@ -24,11 +24,11 @@ BASE="https://github.com/akitaonrails/ai-memory/releases/download/v${VERSION}"
 DEST="${HOME}/.local/bin/ai-memory"
 INSTALL_DIR="${HOME}/.local/lib/ai-memory/v${VERSION}"
 if [[ $APPLY -eq 0 ]]; then
-  echo "DRY RUN: download ${BASE}/${ASSET} and ${ASSET}.sha256, verify checksum, inspect tar members, then install binary to $DEST"
+  echo "DRY RUN: download ${BASE}/${ASSET} and ${ASSET}.sha256, verify checksum and preserve full binary/hooks bundle in $INSTALL_DIR; symlink $DEST"
   echo "This script does not initialize or start the server or change agent MCP configurations."
   exit 0
 fi
-for bin in curl tar awk find install mktemp; do command -v "$bin" >/dev/null 2>&1 || { echo "Missing $bin" >&2; exit 1; }; done
+for bin in curl tar awk find install mktemp cp ln sed; do command -v "$bin" >/dev/null 2>&1 || { echo "Missing $bin" >&2; exit 1; }; done
 if [[ -e "$DEST" || -L "$DEST" || -e "$INSTALL_DIR" ]]; then
   echo "Refusing to replace an existing AI Memory install at $DEST or $INSTALL_DIR" >&2; exit 1
 fi
@@ -54,8 +54,12 @@ if [[ "$COUNT" != 1 ]]; then
   echo 'Could not identify a single ai-memory executable; inspect release manually' >&2; exit 1
 fi
 BINARY="$(cat "$TMP/binaries")"
-install -d "$(dirname "$DEST")"
-install -m 0755 "$BINARY" "$DEST"
+install -d "$(dirname "$DEST")" "$(dirname "$INSTALL_DIR")"
+# Preserve the entire release archive, including sibling lifecycle-hook sources.
+# Copying the binary alone prevents the native hook installer from locating its bundle.
+cp -a "$TMP/unpacked" "$INSTALL_DIR"
+RELATIVE_BINARY="$(printf '%s\n' "$BINARY" | sed "s|^$TMP/unpacked/||")"
+ln -s "$INSTALL_DIR/$RELATIVE_BINARY" "$DEST"
 "$DEST" --version
-printf 'Installed %s. Initialize/start the server separately according to pinned documentation.
-' "$DEST"
+printf 'Installed %s with the full upstream release bundle under %s.\n' "$DEST" "$INSTALL_DIR"
+printf 'Server startup, MCP registration and lifecycle hooks require separate opt-in setup.\n'

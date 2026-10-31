@@ -25,3 +25,14 @@ First run `python3 scripts/quality_gate_doctor.py --json` to detect **possible**
 ## Exit gates
 
 Produce a versioned quality report (tool name, version, command, measured functions/files, thresholds, warnings, exceptions) under `docs/verification/quality/`. Mark unavailable tools `not_measured`. If a threshold is exceeded, open a remediation issue or record a justified waiver; **never** claim a passing gate without tool output.
+
+## Optional pinned Uncle Bob execution — language-aware selection
+
+The upstream Crapper, Dryer and Mutator sources are pinned Git submodules; they are **not** mandatory and are not universal analyzers. Follow `docs/integrations/OPTIONAL-UNCLE-BOB-TOOLS.md`.
+
+1. Run `python3 scripts/setup_optional_quality_tools.py --target <source-root> --json`. Inventory only; a matching extension does not prove compatibility.
+2. Evaluate whether the selected files use Clojure, Java, Go, TypeScript/JavaScript, Rust or Python. For PHP, COBOL and other unsupported languages **skip these three**, select verified alternatives or report `not_measured`.
+3. Check pinned submodules, dependency installation, toolchain/build and coverage/test baseline. Ask before `--install`, `--prepare` or any expensive test/mutation execution.
+4. Invoke only scoped supported files with the upstream documented flags; Mutator needs Crapper as a sibling and green baseline tests. If the repository mixes supported and unsupported languages, never run the tools against the entire tree blindly.
+5. Attribute every metric to actual versioned tool output and file scope; state excluded files and incomplete language coverage explicitly. A skip is not a passing quality gate.
+

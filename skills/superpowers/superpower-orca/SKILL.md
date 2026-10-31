@@ -14,11 +14,12 @@ A **superpower is an entrypoint/router**, not a replacement for specialist skill
 ## Ordered specialist skills
 
 1. Always: `orca-project-entry` to classify the checkout, locate authoritative project state and detect real runtime capabilities.
-2. If project bootstrap/repair is approved: `orca-project-structure` to create additive `.orca/` files and `GRAPHIFY.md`, without moving existing application code.
-3. Always for work: `orca-coordination` to decide solo vs delegated execution, source of truth and role ownership.
-4. On assignments/child delegation: `orca-work-contract` to scope authority, acceptance, reviewers and diaries.
-5. If memory is requested/enabled: `ai-memory-v2` (read-only diagnosis first). Do not install or rewire clients without approval.
-6. Only when architectural exploration is needed: `codebase-architecture`, `architecture-audit`, `c4-architecture` and relevant other categorized skills.
+2. **Mandatory before task allocation:** `orca-setup` to agree on a Chief-led staffing plan, map verified agents to responsibilities, establish optional contracts and offer project memory setup.
+3. If project bootstrap/repair is approved: `orca-project-structure` to create additive `.orca/` files and `GRAPHIFY.md`, without moving existing application code.
+4. Always for work: `orca-coordination` to decide solo vs delegated execution, source of truth and role ownership.
+5. On assignments/child delegation: `orca-work-contract` to scope authority, acceptance, reviewers and diaries.
+6. If memory is requested/enabled: `ai-memory-v2` (read-only diagnosis first). Do not install or rewire clients without approval.
+7. Only when architectural exploration is needed: `codebase-architecture`, `architecture-audit`, `c4-architecture` and relevant other categorized skills.
 
 ## Chief discovery and execution modes
 
@@ -32,9 +33,9 @@ At each session start, **discover** real available agents and the version-matche
 
 1. Identify project root and Git branch; inspect `.orca/PROJECT.md`, `.orca/EXEC.md`, `.orca/phases/`, active contracts, `GRAPHIFY.md`, README, source and tests.
 2. Classify `NEW`, `ORCA READY`, `EXISTING WITHOUT ORCA` or `PARTIAL/DISORGANIZED` and distinguish additive setup from destructive changes.
-3. Read the applicable core skills. Set project Chief and available agent inventory. In solo mode the Chief remains owner of each sequential step.
+3. Read `orca-setup` and the applicable core skills; propose Chief-only or user-approved delegation and map real agent IDs to tasks and responsibilities. Set project Chief and available agent inventory. In solo mode the Chief remains owner of each sequential step.
 4. Create or reuse the standard layout in `skills/core/orca-project-structure/SKILL.md`. **No fake tasks, completed stages, or fabricated knowledge graph.** Keep `.orca/` as authoritative operational state, Git as version history, and Graphify/AI Memory as derived retrieval layers.
-5. Initialize a real phase with `PHASE.md`, tasks, contracts and diaries only for authorized work. Preserve existing phase history. Define success and safety gates.
+5. Initialize a real phase with `PHASE.md`, tasks, contracts and diaries only for authorized work. The Chief issues task-specific contracts to **verified workers only**; each accepts before execution. Preserve existing phase history. Define success and safety gates.
 6. Verify Graphify for this exact project if enabled; distinguish `READY`, `STALE`, `PENDING`, `UNAVAILABLE`, `ERROR`.
 7. Diagnose optional AI Memory 2.0.1 independently for binary version, server response, MCP tools per agent and hook capture per agent. Offer installation/configuration rather than silently changing the user's machine.
 8. Report state, discovered capabilities, execution mode, phase/tasks, blockers and recommended next superpower. Stop if project structure normalization requires authorization.
@@ -46,3 +47,8 @@ Use `.orca/PROJECT.md`, `.orca/EXEC.md`, `.orca/roles/`, `.orca/phases/<phase>/P
 ## Completion gate and next step
 
 Completion requires a current real project state, explicit Chief, truthful solo/delegated mode, valid responsibilities and a known next task. Do not claim independent review in solo mode. For legacy migration, offer `superpower-legacy-discovery` as Part 1; do not automatically enter other phases without user intent or an active approved project plan.
+
+## Explicit Setup ORCA invocation
+
+A request to `setup-orca` uses this Superpower and its internal `orca-setup` skill. The Chief must plan responsibilities and contracts **before** activating Part 1/1.1/2. Agent availability is session-specific. AI Memory installation, MCP client wiring and hook capture are handled in the setup workflow by explicit opt-in; see `docs/integrations/AI-MEMORY-V2.md`. Never claim installation or memory readiness without actual verification.
+

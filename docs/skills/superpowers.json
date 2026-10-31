@@ -4,15 +4,17 @@
   "entrypoints": [
     {
       "id": "orca",
-      "name": "ORCA Project Bootstrap",
+      "name": "ORCA Chief Setup and Project Bootstrap",
       "skill": "superpower-orca",
       "aliases": [
         "start-orca",
         "init-orca",
-        "resume-orca"
+        "resume-orca",
+        "setup-orca"
       ],
       "required": [
         "orca-project-entry",
+        "orca-setup",
         "orca-coordination"
       ],
       "conditional": {

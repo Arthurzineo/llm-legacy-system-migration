@@ -72,3 +72,17 @@ These commands write **user-level agent configuration**, not repository source, 
 ## Data ownership, security, and fallback
 
 The source code and ORCA records remain authoritative; AI Memory is an optional cross-agent retrieval layer. Use unique workspace/project scopes to prevent cross-project contamination. Never persist secrets, personal records or full production logs. If the server or the MCP bridge cannot be verified, continue with `.orca` diaries, source files and Graphify (when verified), and report the missing memory capability rather than treating it as configured.
+
+## Integration with the initial ORCA setup
+
+`superpower-orca` invokes `orca-setup` **before** any migration phase or agent contract assignment. During setup, the Chief must:
+
+1. Run the read-only `python3 scripts/ai_memory_doctor.py --json` and read the installed CLI's actual version. This project's approved default is **v2.0.1**; do not substitute v3 behavior.
+2. Offer (not silently execute) `bash scripts/install_ai_memory_v2.sh --apply` on compatible Linux/macOS, or the pinned Windows/manual instructions. Read the official version-pinned documentation before installing anything.
+3. Explain that installing the binary does **not** start a persistent server. Plan data directory, local-only transport, authentication and lifecycle. After approval, initialize and start using the appropriate v2.0.1 official instructions, without assuming a systemd service was installed.
+4. Preview `bash scripts/configure_ai_memory_v2.sh --client claude-code` or another **actually available** client; with approval, use `--apply`. Separate `install-mcp` from `install-hooks`. For unsupported hook clients, use `--no-hooks`.
+5. Reload each agent client, invoke actual MCP `memory_status`, optionally use project-scoped `memory_query` and confirm observations are recorded by hooks. Record distinct results for Chief and each subordinate; a GET `/mcp` alone is not verification.
+6. Maintain the authoritative ORCA files independently of AI Memory. If unavailable, do not invent a server or MCP-tool result; setup may complete with a documented degradation.
+
+See `skills/core/orca-setup/SKILL.md` for staffing, ownership and contract gates. Installation is optional; diagnosis is read-only.
+
