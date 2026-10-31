@@ -1,6 +1,6 @@
 # LLM - LEGACY SYSTEM MIGRATION
 
-> **Design-stage project.** Local Git development branch only. No GitHub repository has been created, no migration engine has run, and no real legacy application has been analyzed.
+> **Design-stage project.** This private repository is published on `main`. No migration engine has run and no real legacy application has been analyzed.
 
 A reusable, agent-agnostic operating model for reverse-engineering and migrating unsupported legacy software. It combines ORCA work ownership, agent skills, evidence-backed diagrams, optional isolated characterization, AI Memory v2.0.1, and incremental migration with executable acceptance criteria.
 
@@ -100,8 +100,8 @@ Installation and lifecycle changes are always opt-in; see [AI Memory 2.0.1](docs
 - [Original methodology drawing](docs/architecture/original-methodology.png)
 - [Third-party references and licenses](docs/research/REFERENCES.md)
 - [Prompt to start ORCA](prompts/ORCA-PROJECT-ENTRY.md) and [migration prompt](prompts/LEGACY-MIGRATION-START.md)
-- [Local branch and publication restrictions](BRANCH.md)
+- [Repository status and versioning](BRANCH.md)
 
 ## Status and non-goals
 
-This branch establishes the **workflow specifications and local validation scripts**, not a finished migration product. Static parsers, automatic diagram accuracy, environment reconstruction, the AI Memory server, and GitHub publication have **not** been executed or verified against a legacy codebase. The original user's diagram is included only as reference material.
+The published `main` branch establishes **workflow specifications and local validation scripts**, not a finished migration product. Static parsers, automatic diagram accuracy, environment reconstruction, and the AI Memory server have **not** been executed or verified against a legacy codebase. The original methodology drawing is included as reference material.
