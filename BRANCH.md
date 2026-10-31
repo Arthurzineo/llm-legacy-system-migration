@@ -1,25 +1,25 @@
-# Local Development Branch
+# Repository Status and Versioning
 
-This project is intentionally maintained as a **local Git repository** for now. The active branch is `feat/orca-core-migration-skills`, branched from the preserved initial draft on `main`. No GitHub repository, remote, pull request, or public/private publication was created as part of this iteration.
+The canonical repository is **[Arthurzineo/llm-legacy-system-migration](https://github.com/Arthurzineo/llm-legacy-system-migration)**, published on the `main` branch with **private** visibility. The original local development branch was named `feat/orca-core-migration-skills`; its content has been imported into `main`.
 
-After extracting the archive, inspect the local branch with:
-
-```bash
-git status -sb
-git branch -a
-git log --oneline --max-count=3
-```
-
-The owner has subsequently requested private publication, but this execution environment has no authenticated GitHub CLI or API operation to create the remote repository. Publication must remain pending until an authorized channel is available. Never make the repository public. Changes to the ORCA protocol, agent permissions, skills registry, or external MCP configuration should be reviewed together before any deployment or publication.
-
-## Publish this local branch to a private GitHub repository
-
-The repository does not yet exist remotely. This local branch can be published with:
+## Getting started
 
 ```bash
-# Run from an extracted checkout that includes .git
-gh auth login
-bash scripts/publish_private_github.sh
+git clone git@github.com:Arthurzineo/llm-legacy-system-migration.git
+cd llm-legacy-system-migration
+git status --short --branch
+python3 -m unittest discover -s tests
 ```
 
-The script validates the existing branch, refuses a public destination, creates a private repository if necessary, pushes `main` first, and then pushes `feat/orca-core-migration-skills`. It performs **no** network writes until the user runs it in an authenticated environment.
+Authenticate to GitHub to access this private repository. For HTTPS checkout, use `https://github.com/Arthurzineo/llm-legacy-system-migration.git` with your configured credential helper.
+
+## Development policy
+
+- Keep the ORCA core generic and reusable outside legacy migrations.
+- Use the four Superpowers as user entry points; specialized skills remain modular.
+- Preserve evidence and required reviews before declaring an implementation complete.
+- Do not commit secrets, production data, or live AI Memory tokens.
+- Treat AI Memory installation and agent MCP configuration as opt-in.
+- Do not interpret published documentation as proof that a migration pipeline, legacy runtime, or MCP server has been implemented and validated.
+
+This repository contains methodology, orchestration contracts, skills, scripts and tests. Real migration capability must be validated against representative legacy projects.
