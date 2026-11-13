@@ -17,3 +17,10 @@ Record versioned backups, test restore result, migration scripts and checksums, 
 ## Gate
 
 Go/no-go requires verified smoke and integration tests, data reconciled, security risks approved, clear monitoring/alerts, operator on-call and a tested rollback or accepted irreversible plan. Only then retire the legacy paths and update documentation, ORCA records and derived memory/graph indexes.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Approved switch plan, reconciled state, verified rollback and explicit legacy retirement.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
