@@ -17,3 +17,10 @@ PROJECT is durable scope; EXEC is current ownership; phases are gated milestones
 ## Output
 
 Report actual structure created or proposed, files changed, remaining conflicts, tool availability, and the next approved initialization action.
+
+## Execution-quality contract
+
+- **Selection:** Activate only when this skill's named task is necessary; otherwise explicitly mark NOT_APPLICABLE. Do not load adjacent skills by default.
+- **Minimum verifiable result:** Created paths verified on disk, conflicts preserved and source files untouched without authority.
+- **Evidence status:** Attach exact source revision, tool invocation, exit status, observed output, scope and timestamp for every executed check. Label proposals as PLANNED, missing tools as NOT_RUN, incomplete observations as PARTIAL and observed checks as PASS/FAIL. Never convert a generated document, skill activation or model assertion into test evidence.
+- **Failure behavior:** On missing authority, input, tool or acceptance evidence, stop the affected operation, record a blocker and report the narrowest safe next action. Do not claim independent review when run by the Chief alone.
