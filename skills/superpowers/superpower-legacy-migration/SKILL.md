@@ -38,3 +38,10 @@ Stop and escalate on production credentials, missing data-migration safety, unap
 ## Handoff to Part 3
 
 Once P005 verification and P006 cutover planning are documented, offer `superpower-operational-assurance` for P007–P009 release readiness, controlled deployment, cross-client parity, monitoring and recovery. Do not assume deploying in P006 automatically satisfies operational release acceptance.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** G2/G3 approvals, slice evidence, run logs, target compatibility and rollback plan.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
