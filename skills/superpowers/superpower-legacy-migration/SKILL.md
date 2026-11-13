@@ -34,3 +34,7 @@ Use `.orca/phases/003-planning/`, `004-migration/`, `005-verification/`, `006-cu
 ## Stop conditions
 
 Stop and escalate on production credentials, missing data-migration safety, unapproved schema changes, untrusted or unsandboxed execution, missing source authorization, or missing release decision. No role is permitted to report a task done based solely on its own text.
+
+## Handoff to Part 3
+
+Once P005 verification and P006 cutover planning are documented, offer `superpower-operational-assurance` for P007–P009 release readiness, controlled deployment, cross-client parity, monitoring and recovery. Do not assume deploying in P006 automatically satisfies operational release acceptance.
