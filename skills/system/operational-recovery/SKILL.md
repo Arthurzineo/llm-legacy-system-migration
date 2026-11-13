@@ -17,3 +17,10 @@ P009 and G6, before claiming production acceptance or legacy shutdown.
 
 ## Output
 Recovery report with exact test timestamps, results, measured RPO/RTO, gaps, reviewer and signoff. Do not delete old components automatically.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Restore drill, RPO/RTO measurements, runbooks and authorized decommission decision.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
