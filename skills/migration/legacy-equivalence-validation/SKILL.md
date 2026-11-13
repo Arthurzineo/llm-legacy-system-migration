@@ -22,3 +22,10 @@ Build a behavioral oracle from recorded legacy tests and independent domain acce
 ## Gate
 
 Each critical acceptance criterion has a valid test or a recorded risk exception; failed or skipped tests are never silently hidden. No claim of equivalence is stronger than actual observed coverage.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Original/target comparators including permissions, state, concurrency and known gaps.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
