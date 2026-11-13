@@ -39,3 +39,10 @@ Use `.orca/phases/002-characterization/`, `docs/legacy/characterization/decision
 ## Gate and handoff
 
 For approved and executed characterization, record scenario coverage, command evidence and limitations. For NO/DEFER record exactly that, rather than implying a pass. Offer `superpower-legacy-migration` for Part 2 only with the known verification boundaries in its planning inputs.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Recorded YES/NO/DEFER and original-runtime observations under isolation or explicit blocker.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
