@@ -59,7 +59,7 @@ AGENTS.md                       Project entry and routing rules
 .orca/                          Work contracts, phases, roles, diaries, Chief state
 GRAPHIFY.md                     Optional derived graph configuration
 skills/
-  superpowers/                  Only four main user-facing stage entrypoints
+  superpowers/                  Five main user-facing stage entrypoints
   core/                         Generic ORCA protocol and session routing
   migration/                    End-to-end and per-stage migration workflows
   programming-languages/        Go, Python; extensible by users
@@ -91,7 +91,7 @@ Installation and lifecycle changes are always opt-in; see [AI Memory 2.0.1](docs
 
 ## Primary documentation
 
-- [Four Superpowers and invocation guide](docs/skills/SUPERPOWERS.md)
+- [Five Superpowers and invocation guide](docs/skills/SUPERPOWERS.md)
 
 - [ORCA coordination model](docs/architecture/ORCA-OPERATING-MODEL.md) and [protocol](docs/architecture/ORCA-PROTOCOL.md)
 - [Migration workflow](docs/methodology/METHODOLOGY.md)
