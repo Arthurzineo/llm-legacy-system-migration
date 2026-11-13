@@ -63,3 +63,7 @@
 - Diagram files listed here are **conditional**. Missing irrelevant diagrams are acceptable if a rationale is documented; missing critical runtime semantics must be flagged.
 - `docs/legacy/characterization/decision.md` is required even when characterization is skipped.
 - Do not commit production secrets, identifiers, raw dumps or privileged scan outputs.
+
+## Part 3 operational artifacts (conditional)
+
+When approved Part 3 work is actually performed in a target project, create `docs/operations/` and store `release-readiness.md`, `deployment-evidence.md`, `client-parity.md` (if applicable), `operational-acceptance.md`, `risk-register.md` and recovery evidence. Do not create placeholder pass reports or treat owner-reported production as independently inspected. ORCA P007–P009 task/diary records are created only for real work.
