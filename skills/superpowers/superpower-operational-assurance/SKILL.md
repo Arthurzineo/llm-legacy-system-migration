@@ -24,3 +24,10 @@ Produce `docs/operations/release-readiness.md`, `deployment-evidence.md`, `clien
 
 ## Safety and truthfulness
 Never record a planned command as run. Do not mark owner-reported deployment independently verified. Do not equate pilot availability with production-wide acceptance. Do not use production secrets, personal data or unrestricted tests as fixtures. Chief-only review is non-independent. Every external write requires explicit per-action authority and must be logged in the ORCA diary.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** G4/G5/G6 evidence with distinct pilot/production approval and deployment authorization.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
