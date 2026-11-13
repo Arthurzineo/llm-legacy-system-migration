@@ -1,4 +1,4 @@
-# Superpowers — Four Entry Skills, Many Specialists
+# Superpowers — Five Entry Skills, Many Specialists
 
 There are **exactly five user-facing superpowers**. They are intentional commands for the Chief rather than dozens of independent skills the user must remember. The Chief uses the actual ORCA runtime to discover available workers, selects the relevant specialists, reads their `SKILL.md` instructions and executes under `.orca/` tasks and contracts. A plain skill file cannot automatically spawn another agent.
 
@@ -35,7 +35,7 @@ python3 scripts/superpower_plan.py --stage part2 --condition implementation --co
 
 ## Extensibility
 
-Specialists are organized under `skills/{core,migration,programming-languages,architecture,design,system,testing,miscellaneous}/<skill>/SKILL.md`. Add your own language, framework, architecture or QA skills without changing the four user-facing entrypoints. A maintainer may extend the **conditional** groups in `docs/skills/superpowers.json`, validate names, document triggers and keep specialist scope narrow.
+Specialists are organized under `skills/{core,migration,programming-languages,architecture,design,system,testing,miscellaneous}/<skill>/SKILL.md`. Add your own language, framework, architecture or QA skills without changing the five user-facing entrypoints. A maintainer may extend the **conditional** groups in `docs/skills/superpowers.json`, validate names, document triggers and keep specialist scope narrow.
 
 `python3 scripts/install_skills.py --list` discovers all categorized skills, including the `superpowers` category. Installing nested skills into a flat agent skill directory is an explicit opt-in; see `docs/skills/CATALOG.md`.
 
