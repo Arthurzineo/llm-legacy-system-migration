@@ -17,3 +17,10 @@ P008 when two or more client channels exist, or when migrating an API consumed b
 
 ## Output
 `docs/operations/client-parity.md` and machine-readable matrix. A sample of passing journeys is not universal parity.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Client/version journey matrix with actual shared-backend execution and deviations.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
