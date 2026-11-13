@@ -13,3 +13,10 @@ Start from actors, domain goals, decision tables, authorization, state transitio
 Separate business intent from infrastructure details; choose a runner appropriate for the target language (e.g., Cucumber/Godog, Behave/pytest-bdd) only after verifying installed support. A `.feature` file without executable step definitions and a passing test report is documentation, not proof.
 
 Link scenarios to UC/BR/REQ/TC evidence IDs and baseline observations. When legacy behavior differs from an approved requirement, mark an intentional change; do not silently normalize away security problems.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Executable Given/When/Then scenarios, step mappings and actual pass/fail report.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

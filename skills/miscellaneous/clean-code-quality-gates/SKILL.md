@@ -36,3 +36,10 @@ The upstream Crapper, Dryer and Mutator sources are pinned Git submodules; they 
 4. Invoke only scoped supported files with the upstream documented flags; Mutator needs Crapper as a sibling and green baseline tests. If the repository mixes supported and unsupported languages, never run the tools against the entire tree blindly.
 5. Attribute every metric to actual versioned tool output and file scope; state excluded files and incomplete language coverage explicitly. A skip is not a passing quality gate.
 
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Measured CRAP/duplication/mutation data by supported language and commit.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

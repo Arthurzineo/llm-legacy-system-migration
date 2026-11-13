@@ -18,3 +18,10 @@ description: Use for Python architecture, modernization, typing, packaging, test
 ## Completion
 
 Reproducible environment, bounded module change, passing tests, known incompatibilities and migration evidence recorded.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Isolated Python environment, reproducible tests and versioned dependency/security checks.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

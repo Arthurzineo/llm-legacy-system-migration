@@ -54,7 +54,7 @@ Keep state changes in authoritative files before updating Graphify or AI Memory.
 
 ## Setup-first contract establishment
 
-Starting the existing `superpower-orca` must load `orca-setup` after `orca-project-entry`. The Chief proposes a real staffing/permission matrix before starting implementation: verified agent ID, role, allowed files, task ID, required skills, review independence and contract acceptance state. The user decides whether additional agents are used. There is no fifth Superpower; `setup-orca` is an activation alias.
+Starting the existing `superpower-orca` must load `orca-setup` after `orca-project-entry`. The Chief proposes a real staffing/permission matrix before starting implementation: verified agent ID, role, allowed files, task ID, required skills, review independence and contract acceptance state. The user decides whether additional agents are used. There are five Superpowers, including Part 3 operational assurance; `setup-orca` remains an activation alias of `superpower-orca`.
 
 On user-approved delegation the Chief issues work contracts with the documented ORCA/ASSIGN and requires actual ORCA/ACCEPT. When only a Chief is available, tasks are self-owned and sequential; an external acceptance or independent reviewer must not be invented. Project memory setup is offered during this process but remains opt-in and requires live MCP/hook checks in each runtime client.
 

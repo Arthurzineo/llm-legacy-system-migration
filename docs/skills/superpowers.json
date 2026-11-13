@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "description": "Four user-facing superpowers. These are declarative routes, not automatic agent dispatch.",
+  "schema_version": 2,
+  "description": "Five user-facing superpowers. Declarative routing, not automatic agent dispatch.",
   "entrypoints": [
     {
       "id": "orca",
@@ -167,6 +167,46 @@
         ],
         "language-python": [
           "python"
+        ],
+        "delegated": [
+          "orca-work-contract"
+        ],
+        "memory-opt-in": [
+          "ai-memory-v2"
+        ]
+      },
+      "next": [
+        "part3"
+      ]
+    },
+    {
+      "id": "part3",
+      "name": "Part 3 - Operational Assurance",
+      "skill": "superpower-operational-assurance",
+      "aliases": [
+        "start-part-3",
+        "operational-assurance",
+        "release-assurance"
+      ],
+      "required": [
+        "orca-project-entry",
+        "orca-coordination",
+        "release-readiness"
+      ],
+      "conditional": {
+        "deployment": [
+          "controlled-rollout",
+          "legacy-cutover",
+          "docker",
+          "linux"
+        ],
+        "parity": [
+          "cross-client-parity",
+          "differential-testing"
+        ],
+        "operations": [
+          "operational-observability",
+          "operational-recovery"
         ],
         "delegated": [
           "orca-work-contract"

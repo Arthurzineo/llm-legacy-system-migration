@@ -17,3 +17,10 @@ Evaluate original code as legacy constraints; do not recommend microservices, la
 ## Output
 
 An ordered architecture risk report, verified dependency view, candidate migration seams and risk-weighted verification plan. No invented cohesion score.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Source-linked architectural findings, priorities and reproducible dependency checks.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

@@ -13,9 +13,9 @@ A reusable, agent-agnostic operating model for reverse-engineering and migrating
 5. **English repository artifacts.** Skills, prompts, documentation, variable names, commit templates, and reports are in English. Users may interact in any language, including Portuguese.
 6. **Opt-in operations.** Do not install tools, start containers, alter user agent configuration, publish code, or connect external services without authorization.
 
-## Four user-facing Superpowers
+## Five user-facing Superpowers
 
-Instead of making users remember dozens of skills, the Chief exposes exactly **four primary Superpowers**. Each one reads and routes to the appropriate specialized skills and uses existing ORCA contracts and diaries. The Chief can run **alone** or delegate if other real agents are available; agent availability is checked in the current session, never inferred from a role name.
+Instead of making users remember dozens of skills, the Chief exposes exactly **five primary Superpowers**. Each one reads and routes to the appropriate specialized skills and uses existing ORCA contracts and diaries. The Chief can run **alone** or delegate if other real agents are available; agent availability is checked in the current session, never inferred from a role name.
 
 | User command | Superpower | Scope |
 | --- | --- | --- |
@@ -23,6 +23,7 @@ Instead of making users remember dozens of skills, the Chief exposes exactly **f
 | Start Part 1 | `superpower-legacy-discovery` | Static reverse engineering, source evidence and diagrams |
 | Start Part 1.1 | `superpower-legacy-characterization` | Optional, explicit YES / NO / DEFER, isolated runtime and characterization |
 | Start Part 2 | `superpower-legacy-migration` | Questionnaire, target architecture, incremental implementation, validation and cutover |
+| Start Part 3 | `superpower-operational-assurance` | Release readiness (P007), controlled deployment and cross-client parity (P008), operational acceptance and recovery (P009) |
 
 See the [Superpowers guide](docs/skills/SUPERPOWERS.md) and the [routing manifest](docs/skills/superpowers.json). Inspect the read-only routing plan with:
 
@@ -44,7 +45,10 @@ Superpowers are **orchestration instructions**, not an automatic agent dispatche
 | Part 2 — planning | P003 | Interactive intake, architecture target, migration plan | Plan and risk approval |
 | Part 2 — implementation | P004 | Incremental implementation with ORCA contracts | Component acceptance |
 | Part 2 — verification | P005 | Differential/regression/security verification | Independent evidence or human risk acceptance |
-| Part 2 — transition | P006 | Data reconciliation, controlled cutover, rollback | Deployment approval |
+| Part 2 — transition | P006 | Data reconciliation, controlled cutover, rollback plan | Deployment approval |
+| Part 3 — readiness | P007 | Versioned release evidence, approval and recovery preparation | G4 |
+| Part 3 — deployment | P008 | Approved rollout, live verification and client parity | G5 |
+| Part 3 — operations | P009 | SLO, restore, alerts, handoff and lifecycle controls | G6 |
 
 The Chief **must ask whether Part 1.1 should be attempted**, explain feasibility and security implications, and record YES / NO / DEFER. If NO, do not claim behavioral equivalence proven by dynamic testing.
 
@@ -55,7 +59,7 @@ AGENTS.md                       Project entry and routing rules
 .orca/                          Work contracts, phases, roles, diaries, Chief state
 GRAPHIFY.md                     Optional derived graph configuration
 skills/
-  superpowers/                  Only four main user-facing stage entrypoints
+  superpowers/                  Five main user-facing stage entrypoints
   core/                         Generic ORCA protocol and session routing
   migration/                    End-to-end and per-stage migration workflows
   programming-languages/        Go, Python; extensible by users
@@ -87,7 +91,7 @@ Installation and lifecycle changes are always opt-in; see [AI Memory 2.0.1](docs
 
 ## Primary documentation
 
-- [Four Superpowers and invocation guide](docs/skills/SUPERPOWERS.md)
+- [Five Superpowers and invocation guide](docs/skills/SUPERPOWERS.md)
 
 - [ORCA coordination model](docs/architecture/ORCA-OPERATING-MODEL.md) and [protocol](docs/architecture/ORCA-PROTOCOL.md)
 - [Migration workflow](docs/methodology/METHODOLOGY.md)
@@ -101,6 +105,10 @@ Installation and lifecycle changes are always opt-in; see [AI Memory 2.0.1](docs
 - [Third-party references and licenses](docs/research/REFERENCES.md)
 - [Prompt to start ORCA](prompts/ORCA-PROJECT-ENTRY.md) and [migration prompt](prompts/LEGACY-MIGRATION-START.md)
 - [Repository status and versioning](BRANCH.md)
+
+## Operational assurance and skills quality
+
+Part 3 adds five specialist skills: `release-readiness`, `controlled-rollout`, `cross-client-parity`, `operational-observability` and `operational-recovery`. It is a **methodology and routing specification**, not proof that a release engine has run. See [skill quality audit](docs/skills/SKILL-QUALITY-AUDIT.md).
 
 ## Status and non-goals
 

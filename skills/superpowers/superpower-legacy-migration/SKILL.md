@@ -34,3 +34,14 @@ Use `.orca/phases/003-planning/`, `004-migration/`, `005-verification/`, `006-cu
 ## Stop conditions
 
 Stop and escalate on production credentials, missing data-migration safety, unapproved schema changes, untrusted or unsandboxed execution, missing source authorization, or missing release decision. No role is permitted to report a task done based solely on its own text.
+
+## Handoff to Part 3
+
+Once P005 verification and P006 cutover planning are documented, offer `superpower-operational-assurance` for P007–P009 release readiness, controlled deployment, cross-client parity, monitoring and recovery. Do not assume deploying in P006 automatically satisfies operational release acceptance.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** G2/G3 approvals, slice evidence, run logs, target compatibility and rollback plan.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

@@ -17,3 +17,10 @@ description: Use for behavior-preserving refactoring, removal of genuine duplica
 ## Completion
 
 Same approved observable behavior; smaller dependency/change surface; measured outcome or candidly unknown metrics; rollback possible.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Behavior-preserving change supported by regression test and before/after metrics.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

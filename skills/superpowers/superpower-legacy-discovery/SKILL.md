@@ -37,3 +37,10 @@ Read `docs/methodology/OUTPUT-CONTRACT.md` before creating any directory. Use `d
 ## Gate and handoff
 
 Do not announce Part 1 complete until G1 is accepted with evidence or a recorded exception. Offer **Part 1.1** by invoking `superpower-legacy-characterization`; the Chief must ask YES/NO/DEFER, including runtime isolation risks. If the user declines, create `docs/legacy/characterization/decision.md` and proceed to `superpower-legacy-migration` only with a prominent verification limitation.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** G1 source-backed inventory, diagram provenance and uncovered-code register.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.

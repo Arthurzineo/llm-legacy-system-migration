@@ -4,7 +4,7 @@ The repository uses `skills/<category>/<skill>/SKILL.md` for human organization 
 
 ## Categories
 
-- `superpowers/`: exactly four user-facing entrypoint skills (generic ORCA, Part 1, optional Part 1.1, Part 2); see [Superpowers](SUPERPOWERS.md).
+- `superpowers/`: exactly five user-facing entrypoint skills (generic ORCA, Part 1, optional Part 1.1, Part 2, Part 3 operational assurance); see [Superpowers](SUPERPOWERS.md).
 - `core/`: ORCA project entry, mandatory `orca-setup`, contracts, role discovery and coordination.
 - `migration/`: orchestration, part 1 static analysis, decomposition, evidence, diagrams, optional part 1.1, part 2 questionnaire, implementation and verification.
 - `programming-languages/`: Go and Python; add any language-specific SKILL.md here.
@@ -26,7 +26,7 @@ Never use the generic GitHub repo publication script to install skills or change
 
 ## Entry routing
 
-Do not ask users to invoke the many specialist skills manually. The four `superpower-*` entry skills route to relevant specialists via `superpowers.json` and their own stage instructions. The runtime must read and apply the child skills rather than assume name references execute code. Use `python3 scripts/superpower_plan.py --list` to view entrypoints.
+Do not ask users to invoke the many specialist skills manually. The five `superpower-*` entry skills route to relevant specialists via `superpowers.json` and their own stage instructions. The runtime must read and apply the child skills rather than assume name references execute code. Use `python3 scripts/superpower_plan.py --list` to view entrypoints.
 
 ## Third-party tools versus agent skills
 

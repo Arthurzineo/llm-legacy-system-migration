@@ -34,3 +34,7 @@ Prefer red-green-refactor TDD for code and acceptance-first Gherkin/BDD for doma
 ## Phase progression
 
 Phases and contracts follow the generic ORCA protocol. In Chief-only mode the Chief performs scoped roles sequentially with documented non-independent review; extra agents can execute in parallel only when work ownership and environment permissions are safe.
+
+## Part 3 — Operational assurance (P007–P009)
+
+After Part 2 cutover preparation, `superpower-operational-assurance` verifies artifact and source provenance, approves operational GO/NO-GO (G4), performs only specifically authorized controlled deployment and cross-client parity checks (G5), and evaluates post-release SLOs, restoration, alerting, credential lifecycle and operational handoff (G6). A web pilot can be deployed without being approved for general production. Each gate requires exact observed evidence and human signoff; a documentation update is not a passed gate. See `docs/skills/SUPERPOWERS.md`.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and preview four user-facing ORCA superpower routes (read-only).
+"""Validate and preview five user-facing ORCA superpower routes (read-only).
 
 This program does not execute agent skills, call a model, start an agent,
 install tools, or authorize a phase. Agents must read the selected SKILL.md
@@ -13,17 +13,17 @@ from install_skills import inventory
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / 'docs/skills/superpowers.json'
-EXPECTED = {'orca', 'part1', 'part1.1', 'part2'}
+EXPECTED = {'orca', 'part1', 'part1.1', 'part2', 'part3'}
 
 
 def load_manifest(path=MANIFEST, catalog=None):
     path = Path(path)
     obj = json.loads(path.read_text(encoding='utf-8'))
-    if obj.get('schema_version') != 1:
+    if obj.get('schema_version') not in (1, 2):
         raise ValueError('Unsupported routing schema')
     entries = obj.get('entrypoints')
-    if not isinstance(entries, list) or len(entries) != 4:
-        raise ValueError('Exactly four superpowers are required')
+    if not isinstance(entries, list) or len(entries) != 5:
+        raise ValueError('Exactly five superpowers are required')
     ids = [e['id'] for e in entries]
     if set(ids) != EXPECTED or len(set(ids)) != len(ids):
         raise ValueError(f'Superpower IDs mismatch: {ids}')
@@ -90,7 +90,7 @@ def route(stage, conditions=(), decision=None, manifest=MANIFEST):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--list', action='store_true', help='List the four user-facing superpowers')
+    ap.add_argument('--list', action='store_true', help='List the five user-facing superpowers')
     ap.add_argument('--stage', help='Superpower ID or alias, e.g. part1.1')
     ap.add_argument('--condition', action='append', default=[], help='Opt in to a contextual skill group')
     ap.add_argument('--decision', choices=['YES', 'NO', 'DEFER'], help='Part 1.1 user decision (not authorization to run software)')
