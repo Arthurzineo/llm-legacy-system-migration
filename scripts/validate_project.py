@@ -15,6 +15,8 @@ REQUIRED=[
     'docs/skills/SUPERPOWERS.md',
     'docs/skills/superpowers.json',
     'scripts/superpower_plan.py',
+    'skills/superpowers/superpower-operational-assurance/SKILL.md',
+    'docs/skills/SKILL-QUALITY-AUDIT.md',
     'docs/architecture/original-methodology.png',
     'scripts/install_skills.py','scripts/ai_memory_doctor.py',
     'scripts/configure_ai_memory_v2.sh','scripts/install_ai_memory_v2.sh',
@@ -22,7 +24,7 @@ REQUIRED=[
 CATEGORIES={'superpowers','core','migration','programming-languages','architecture','design',
             'system','testing','miscellaneous'}
 PHASES=['000-foundation','001-discovery','002-characterization','003-planning',
-        '004-migration','005-verification','006-cutover']
+        '004-migration','005-verification','006-cutover','007-release-readiness','008-controlled-deployment','009-operational-assurance']
 
 def validate(root=ROOT):
     missing=[rel for rel in REQUIRED if not (root/rel).is_file()]
