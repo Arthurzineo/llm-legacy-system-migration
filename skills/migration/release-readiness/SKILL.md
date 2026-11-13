@@ -17,3 +17,10 @@ P007 of Part 3; not for performing deployments.
 
 ## Output
 `docs/operations/release-readiness.md`: revision, decision, findings, evidence, approver, conditions and expiration. Planning is not an approval or authorization to deploy.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Version-specific GO/NO-GO evidence and approved owner risk acceptance.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
