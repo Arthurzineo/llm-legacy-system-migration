@@ -22,3 +22,10 @@ Measured score `killed/(killed+survived)` where defined, coverage gaps, stronger
 
 The external `unclebob/mutator` source is available through a pinned submodule at `tools/third-party/mutator` and expects its sibling `tools/third-party/crapper`. Run the language inventory in `scripts/setup_optional_quality_tools.py` before selecting it; supported languages are Clojure, Java, Go, TypeScript/JavaScript, Rust and Python. For an unsupported language, choose an appropriate alternative, or record `not_measured`. Explicitly authorize any dependency installation or costly mutation suite. Source checkout does not count as a mutation result.
 
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Executed seeded mutants, killed/survived results, cost and measured scope.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
