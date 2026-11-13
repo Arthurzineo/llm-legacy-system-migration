@@ -21,3 +21,10 @@ Read `legacy-migration-orchestrator`, source authorization and current ORCA cont
 ## Acceptance criteria
 
 High-impact claims reference the actual source revision and supporting file/symbol/line or verified environment output. Summaries explicitly distinguish **observed code structure** from **LLM interpretation**. Reports indicate coverage limits and absent parsers.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Immutable revision plus parser versions, AST/graph coverage and unsupported inputs.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
