@@ -25,3 +25,10 @@ Ask for target language and supported version; framework/runtime; target UI/fron
 ## Exit
 
 The user can inspect an English questionnaire and a visible decisions/unknowns register. No hidden architecture assumptions or premature rewrite.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** User-confirmed architecture decisions, unresolved questions and target constraints.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
