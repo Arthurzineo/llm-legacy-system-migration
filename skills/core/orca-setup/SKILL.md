@@ -38,3 +38,10 @@ Memory integration is optional and must be explicitly accepted. Before applying 
 ## Setup gate
 
 Do not start a delegated task before the real worker has accepted a valid contract. Do not start Part 1 or Part 2 automatically when the user has only requested ORCA setup. Report unresolved risks and request human approval for high-impact architecture/security/deployment decisions.
+
+## Execution-quality contract
+
+- **Selection:** Activate only when this skill's named task is necessary; otherwise explicitly mark NOT_APPLICABLE. Do not load adjacent skills by default.
+- **Minimum verifiable result:** Approved solo/delegated staffing matrix, signed-off permissions, and per-client memory status.
+- **Evidence status:** Attach exact source revision, tool invocation, exit status, observed output, scope and timestamp for every executed check. Label proposals as PLANNED, missing tools as NOT_RUN, incomplete observations as PARTIAL and observed checks as PASS/FAIL. Never convert a generated document, skill activation or model assertion into test evidence.
+- **Failure behavior:** On missing authority, input, tool or acceptance evidence, stop the affected operation, record a blocker and report the narrowest safe next action. Do not claim independent review when run by the Chief alone.
