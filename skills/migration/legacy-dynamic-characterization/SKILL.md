@@ -22,3 +22,10 @@ The Chief must ask: **"Would you like to attempt Part 1.1 dynamic characterizati
 ## Acceptance
 
 Confirmed outcomes are repeatable or explicitly stochastic; side effects are captured; mock limitations and denied operations are listed; user opt-in and sandbox permissions exist in writing.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Repeatable oracle runs, fixture revisions, observed states and explicit mock limitations.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
