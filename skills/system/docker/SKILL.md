@@ -21,3 +21,10 @@ Docker is a packaging/runtime mechanism, not a universal strong sandbox. For uns
 ## Exit
 
 Reproducible setup or clear infeasibility report, with approved execution scope and no exposure to production.
+
+## Evidence and completion contract
+
+- **Activation:** Read only for a relevant task; record NOT_APPLICABLE when its conditions do not hold.
+- **Concrete result:** Pinned images, explicit runtime permissions and reproducible isolation constraints.
+- **Verification:** Cite source revision, file/symbol, executed command, exit status, observation scope, artifacts, timestamps and exceptions where applicable. A written plan is not an executed check. Use PASS, FAIL, PARTIAL, NOT_RUN, NOT_APPLICABLE rather than an unsupported green status.
+- **Stop and escalate:** Missing source, tooling, authorization, or objective evidence blocks a completion claim. Chief-only reviews are non-independent.
